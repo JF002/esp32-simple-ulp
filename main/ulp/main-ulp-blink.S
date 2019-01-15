@@ -1,0 +1,52 @@
+#include "soc/rtc_cntl_reg.h"
+#include "soc/soc_ulp.h"
+#include "soc/rtc_io_reg.h"
+
+    .bss
+
+    .text
+	.global entry
+entry:
+    .global loop1
+
+loop1:
+    WRITE_RTC_REG(RTC_GPIO_OUT_REG,RTC_GPIO_OUT_DATA_S+12,1,1)
+    WAIT 65535
+    WAIT 65535
+    WAIT 65535
+    WAIT 65535
+    WAIT 65535
+    WAIT 65535
+    WAIT 65535
+    WAIT 65535
+    WAIT 65535
+    WAIT 65535
+    WAIT 65535
+    WAIT 65535
+    WAIT 65535
+    WAIT 65535
+    WAIT 65535
+    WAIT 65535
+    WAIT 65535
+    WAIT 65535
+    WRITE_RTC_REG(RTC_GPIO_OUT_REG,RTC_GPIO_OUT_DATA_S+12,1,0)
+    WAIT 65535
+    WAIT 65535
+    WAIT 65535
+    WAIT 65535
+    WAIT 65535
+    WAIT 65535
+    WAIT 65535
+    WAIT 65535
+    WAIT 65535
+    WAIT 65535
+    WAIT 65535
+    WAIT 65535
+    WAIT 65535
+    WAIT 65535
+    WAIT 65535
+    WAIT 65535
+    WAIT 65535
+    WAIT 65535
+
+    JUMP loop1
